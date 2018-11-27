@@ -6,11 +6,12 @@
   apt: update_cache=yes
   when: update
 
-- name: Install tmux and git
+- name: Install tmux, git and bc
   apt: name={{ item }} state=present
   with_items:
     - tmux
     - git
+    - bc
   when: install
   become: true
 
